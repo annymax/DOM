@@ -1,0 +1,100 @@
+const basketPlayers = [
+  {
+    name: "Michael Jordan",
+    photo: "./images/jordan.jpg",
+    facts: `Michael Jordan, in full Michael Jeffrey Jordan,
+  byname Air Jordan, (born February 17, 1963, Brooklyn, New York, U.S.), 
+  American collegiate and professional basketball player widely considered 
+  to be one of the greatest all-around players in the history of the game. 
+  He led the Chicago Bulls to six National Basketball Association (NBA) 
+  championships (1991–93, 1996–98).`,
+  },
+  {
+    name: "Lebron James",
+    photo: "./images/lebron.jpg",
+    facts: `LeBron James became an immediate star after skipping 
+  college to join the NBA's Cleveland Cavaliers. He led the Miami Heat to NBA 
+  titles in 2012 and 2013 and won another championship 
+  with Cleveland in 2016, before joining the Los Angeles Lakers in 2018.`,
+  },
+  {
+    name: "Luka Doncic",
+    photo: "./images/doncic.jpg",
+    facts: `Luka Doncic is a Slovenian professional basketball player for the 
+  Slovenian national team as well as the Dallas Mavericks of the National Basketball Association (NBA). 
+  He has broken several NBA and EuroLeague champion history records and has been 
+  named NBA All-Star, All-NBA First Team, and NBA Rookie of the Year.`,
+  },
+  {
+    name: "James Harden",
+    photo: "./images/Harden.jpg",
+    facts: `James Edward Harden Jr. (born August 26, 1989) is an American professional basketball player 
+  for the Philadelphia 76ers of the National Basketball Association (NBA). He is one of the NBA's most prolific scorers,
+  as well as one of the top overall players in the league.Harden is a two-time member of the United States national team,
+   winning gold medals at the 2012 Summer Olympics and 2014 FIBA World Cup.`,
+  },
+  {
+    name: "Russel Westbrook",
+    photo: "./images/westbrook.jpg",
+    facts: `Russell Westbrook III 
+  (born November 12, 1988) is an American professional basketball player for the Los Angeles 
+  Lakers of the National Basketball Association (NBA). A member of the NBA 75th Anniversary Team,
+   he is a nine-time NBA All-Star and earned the NBA Most Valuable Player Award (MVP) for the 2016–17 
+   season. He is also a nine-time All-NBA Team member, 
+  led the league in scoring in 2014–15 and 2016–17, and won back-to-back NBA All-Star Game MVP awards in 2015 and 2016.
+In 2017, the year he won the league MVP award, Westbrook became one of two players in NBA history 
+   to average a triple-double for a season, along with Oscar Robertson in 1962. He also set a record 
+   for the most triple-doubles in a season, with 42. He went on to average a triple-double the 
+   following two seasons as well as lead the league in assists and become the first player to lead the 
+   league in points and assists in multiple seasons. In 2020–21, Westbrook averaged a triple-double 
+   for the fourth time in five seasons,
+    and he passed Robertson for the most career triple-doubles in NBA history.`,
+  },
+  { name: "Kobe Bryant", photo: "./images/kobe.jpg", facts: `Kobe Bryant, in full Kobe Bean Bryant, 
+  (born August 23, 1978, Philadelphia, Pennsylvania, U.S.—died January 26, 2020, Calabasas, California), 
+  American professional basketball player, who helped lead the Los Angeles Lakers of the National 
+  Basketball
+   Association (NBA) to five championships (2000–02 and 2009–10).` },
+  {
+    name: "Stephen Curry",
+    photo: "./images/Curry.jpeg",
+    facts: `Wardell Stephen Curry II (born March 14, 1988) is an American 
+  professional basketball player for the Golden State Warriors of the National
+   Basketball Association (NBA). Widely regarded as one of the greatest basketball
+    players of all time, and as the greatest shooter in NBA history,Curry is credited 
+    with revolutionizing the sport by inspiring teams and players to shoot 
+    far more three-point shots.`,
+  },
+];
+
+//нажимаем на мяч - выпадает меню
+const button = document.querySelector(".nav-btn");
+const menu = document.querySelector(".menu");
+const content = document.querySelector(".content-wrapper");
+
+button.addEventListener("click", function () {
+  content.innerHTML = "";
+  menu.classList.toggle("menu-active");
+});
+
+const bodyElement = document.body;
+
+const listItems = document.querySelectorAll("[data-list]");
+for (let list of listItems) {
+  list.addEventListener("click", function () {
+    let index = list.getAttribute("data-list");
+    const h2 = document.createElement("h2");
+    const image = document.createElement("img");
+    const facts = document.createElement("p");
+    content.innerHTML = "";
+    h2.className = "title";
+    h2.innerHTML = basketPlayers[index].name;
+    image.className = "img-basket";
+    image.src = basketPlayers[index].photo;
+    facts.className = "about";
+    facts.innerHTML = basketPlayers[index].facts;
+    image.className = "img-basket";
+    image.src = basketPlayers[index].photo;
+    content.prepend(h2, image, facts);
+  });
+}
