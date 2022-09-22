@@ -1,3 +1,11 @@
+:root {
+  --main-color: black;
+  --secondary-color: white;
+  --hover-shadow-color: rgb(228, 219, 219);
+  --focus-shadow-color: rgb(236, 194, 194);
+  --focus-background-color: rgb(212, 118, 41);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +13,11 @@
   text-decoration: none;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
 }
 
 .body { 
@@ -20,7 +33,7 @@
   height: 150px;
   display: flex;
   flex-direction: row;
-  background-color: black;
+  background-color: var(--main-color);
 }
 
 .content-wrapper {
@@ -52,7 +65,7 @@
   display:flex;
   justify-content: center;
   align-items: center;
-  color: bisque;
+  color: var(--secondary-color);
   font-size: 20px;
   font-weight: 700;
   margin-left:30px;
@@ -71,7 +84,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .menu-active {
@@ -87,7 +99,7 @@
 }
 
 .menu-list-link {
-  color: white;
+  color: var(--secondary-color);
 }
 
 .menu-list-item {
@@ -100,8 +112,8 @@
 
 
 .title {
-  color: white;
-  background-color: black;
+  color: var(--secondary-color);
+  background-color: var(--main-color);
   font-weight: 800;
   line-height: 0.67em;
   border-radius: 10px;
@@ -124,8 +136,8 @@
 
 .about {
   display: block;
-  color: white;
-  background-color: black;
+  color: var(--secondary-color);
+  background-color: var(--main-color);
   max-width: 100%;
   height: auto;
   font-size: 14px;
@@ -140,21 +152,32 @@
 .nav-btn:hover,
 .menu-list-item:hover {
   border-radius: 6px;
-  box-shadow: 0px 0px 15px #aaaaaa;
+  box-shadow: 0px 0px 15px var(--hover-shadow-color);
 }
 
 .menu-list-link:focus {
-    outline: none;
-  box-shadow: 0px 0px 15px rgb(236, 194, 194);
-  background-color: rgb(212, 118, 41);
+  outline: none;
+  box-shadow: 0px 0px 15px var(--focus-shadow-color);
+  background-color: var(--focus-background-color);
   border-radius: 6px;
 }
-
 
 .nav-btn {
     cursor:pointer;
   }
 
-@media (max-width: 690px) {
-  
+@media (max-width: 827px) {
+  .menu-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .menu-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
 }
