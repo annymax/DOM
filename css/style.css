@@ -142,7 +142,7 @@ html {
   opacity: 80%;
 }
 
-.nav-btn:hover,
+.image-ball:hover,
 .menu-list-item:hover {
   border-radius: 6px;
   box-shadow: 0px 0px 15px var(--hover-shadow-color);
@@ -155,7 +155,7 @@ html {
   border-radius: 6px;
 }
 
-.nav-btn {
+.image-ball {
   cursor: pointer;
 }
 
