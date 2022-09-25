@@ -72,15 +72,17 @@ const basketPlayers = [
   },
 ];
 
-const button = document.querySelector(".image-ball");
+const button = document.querySelector(".button");
 const menu = document.querySelector(".menu");
 const content = document.querySelector(".content-wrapper");
 const siteTitle = document.querySelector(".site-title");
+const firstListItem = document.querySelector(".focus-el");
 
 button.addEventListener("click", function () {
   content.innerHTML = "";
   menu.classList.toggle("menu-active");
   siteTitle.classList.toggle("hidden");
+  firstListItem.focus();
 });
 
 const bodyElement = document.body;
