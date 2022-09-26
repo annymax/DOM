@@ -83,6 +83,7 @@ button.addEventListener("click", function () {
   menu.classList.toggle("menu-active");
   siteTitle.classList.toggle("hidden");
   firstListItem.focus();
+  firstListItem.classList.toggle("hidden");
 });
 
 const bodyElement = document.body;
