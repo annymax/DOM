@@ -45,15 +45,14 @@ html {
   flex-direction: column;
 }
 
-.button{
-  background-color: var(--main-color);  
+.button {
+  background-color: var(--main-color);
   margin-left: 15px;
 }
 
 .image-ball {
   max-width: 70px;
   max-height: 70px;
-
 }
 
 .nav {
@@ -166,6 +165,16 @@ html {
 }
 
 @media (max-width: 827px) {
+  .body {
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .main{
+    height: 100vh;
+  }
+
   .menu-list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -183,9 +192,15 @@ html {
 }
 
 @media (max-width: 560px) {
-  .body {
-   
-  }
+.body {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.main{
+  height: 100vh;
+}
 
   .menu-list {
     display: grid;
